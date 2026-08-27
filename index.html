@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Esquerda Brasileira — E-book</title>
+<style>
+  :root{
+    --vermelho: #7a1414;
+    --vermelho-escuro: #3d0a0a;
+    --branco: #f5f0ea;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html, body{
+    height:100%;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  body{
+    min-height:100vh;
+    background-image: url('bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display:flex;
+    align-items:center;
+  }
+
+  /* overlay mais forte à esquerda (onde fica o texto), suave à direita (mantém o mockup visível) */
+  body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(
+      to right,
+      rgba(10,0,0,0.82) 0%,
+      rgba(10,0,0,0.72) 30%,
+      rgba(10,0,0,0.35) 55%,
+      rgba(10,0,0,0.05) 70%
+    );
+    z-index:1;
+  }
+
+  .conteudo{
+    position:relative;
+    z-index:2;
+    max-width: 620px;
+    padding: 40px 6vw;
+    color: var(--branco);
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #e0a0a0;
+    border-left: 3px solid #b32020;
+    padding-left: 10px;
+    margin-bottom: 22px;
+  }
+
+  h1{
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+  }
+
+  h2{
+    font-family: Arial, sans-serif;
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+    font-weight: 400;
+    color: #e7d9d9;
+    margin-top: 14px;
+    margin-bottom: 22px;
+  }
+
+  p.descricao{
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d8c9c9;
+    max-width: 480px;
+    margin-bottom: 34px;
+  }
+
+  .cta{
+    display:inline-block;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration:none;
+    color:#fff;
+    background: linear-gradient(180deg, #c41f1f, #8f1414);
+    padding: 20px 42px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(180,20,20,0.45), inset 0 1px 0 rgba(255,255,255,0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .cta:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(180,20,20,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .selo{
+    margin-top: 16px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #c7b6b6;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 820px){
+    body{
+      align-items: flex-end;
+    }
+    body::before{
+      background: linear-gradient(
+        to top,
+        rgba(5,0,0,0.92) 0%,
+        rgba(5,0,0,0.85) 40%,
+        rgba(5,0,0,0.25) 75%,
+        rgba(5,0,0,0.05) 100%
+      );
+    }
+    .conteudo{
+      max-width: 100%;
+      padding: 32px 24px 48px;
+      text-align:left;
+    }
+    p.descricao{ max-width: 100%; }
+    .cta{ width: 100%; text-align:center; }
+  }
+</style>
+</head>
+<body>
+  <div class="conteudo">
+    <span class="eyebrow">E-BOOK · FATOS, POLÍTICA E DEBATES</span>
+    <h1>A Esquerda<br>Brasileira</h1>
+    <h2>O Que Você Precisa Saber em 100 Páginas</h2>
+    <p class="descricao">
+      Conheça a esquerda brasileira em 100 páginas: fatos, políticas, dados e controvérsias baseados em fontes públicas e verificáveis.
+    </p>
+    <a href="COLE_AQUI_O_LINK_DO_CHECKOUT_DA_CAKTO" class="cta">Quero Acessar o E-book</a>
+    <div class="selo">Acesso imediato após a confirmação da compra</div>
+  </div>
+</body>
+</html>
